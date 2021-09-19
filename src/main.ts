@@ -17,12 +17,12 @@ async function bootstrap() {
     process.env.COUNTRY_LIST_API_ENDPOINT
   */
   const env = await setEnVars();
-  if (!env) {
-    throw new InternalServerErrorException();
-  }
+  // if (!env) {
+  //   throw new InternalServerErrorException();
+  // }
 
   const app = await NestFactory.create(AppModule);
-  server = await app.listen(process.env.PORT);
+  server = await app.listen(3000);
 
   console.log('Application has started on ' + process.env.PORT);
 
